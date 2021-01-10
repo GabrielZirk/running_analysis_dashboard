@@ -48,7 +48,6 @@ track_fig1.update_layout(legend_title_text= "Heart Rate",
     xaxis_title = "Longitude",
     yaxis_title = "Latitude",
     zaxis_title = "Altitude"),
-                        width = 700,
                         margin = dict(r = 20,
                                      b = 10,
                                      l = 10,
@@ -88,8 +87,8 @@ corr_speed_slope_scatter.add_trace(go.Scatter(x = speed,
                                              y = slope,
                                              mode = "markers"))
 corr_speed_slope_scatter.update_layout(title = "Corr. speed vs. slope",
-                                      xaxis_title = "speed (m/s)",
-                                      yaxis_title = "slope (%)")
+                                      xaxis_title = "Speed (m/s)",
+                                      yaxis_title = "Slope (%)")
 
 track_fig3 = make_subplots(specs=[[{"secondary_y": True}]])
 track_fig3.add_trace(go.Scatter(x = distance,
