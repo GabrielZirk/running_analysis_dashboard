@@ -123,11 +123,11 @@ app.layout = row = html.Div(
                 dbc.Col(html.Div(
                     dcc.Graph(
                     id = "3D-plot",
-                    figure = track_fig1))),
+                    figure = track_fig1)), width = 6),
                 dbc.Col(html.Div(
                     dcc.Graph(
                     id = "mapblox plot",
-                    figure = track_fig2)))
+                    figure = track_fig2)), width = 6)
             ]),
         dbc.Row(dbc.Col(html.Div(dcc.Graph(
                     id = "2yaxis plot",
@@ -137,11 +137,11 @@ app.layout = row = html.Div(
                 dbc.Col(html.Div(
                     dcc.Graph(
                         id="corr1",
-                        figure=corr_speed_slope_scatter))),
+                        figure=corr_speed_slope_scatter)), width = 6),
                 dbc.Col(html.Div(
                     dcc.Graph(
                         id="corr2",
-                        figure=corr_hr_slope_scatter)))
+                        figure=corr_hr_slope_scatter)), width = 6)
             ])
 ])
 
