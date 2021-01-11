@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 import dash_bootstrap_components as dbc
 from plotly.subplots import make_subplots
 
-app = dash.Dash(__name__, external_stylesheets = [dbc.themes.MINTY])
+app = dash.Dash(__name__, external_stylesheets = [dbc.themes.SUPERHERO])
 
 server = app.server
 
@@ -54,7 +54,10 @@ track_fig1.update_layout(legend_title_text= "Heart Rate",
                                      t= 10),
 coloraxis_colorbar = dict(title = "Heart Rate (bpm)",
                           lenmode="pixels",
-                          len=300)
+                          len=300),
+font_color = "white",
+                         paper_bgcolor = "rgba(0, 0, 0, 0)",
+                         plot_bgcolor = "rgba(0, 0, 0, 0)"
 )
 
 
@@ -68,7 +71,11 @@ track_fig2 = px.scatter_mapbox(track_df,
                                zoom = 12)
 track_fig2.update_layout(coloraxis_colorbar = dict(title = "Speed (m/s)",
                                                    lenmode = "pixels",
-                                                   len = 300))
+                                                   len = 300),
+                         font_color = "white",
+                         paper_bgcolor="rgba(0, 0, 0, 0)",
+                         plot_bgcolor="rgba(0, 0, 0, 0)"
+                         )
 
 correlation_hr_slope = hr.corr(slope)
 correlation_speed_slope = speed.corr(slope)
@@ -79,7 +86,11 @@ corr_hr_slope_scatter.add_trace(go.Scatter(x = hr,
                                            mode = "markers"))
 corr_hr_slope_scatter.update_layout(title = "Corr. heart rate vs. slope",
                                    xaxis_title = "Heart rate (bpm)",
-                                   yaxis_title = "Slope (%)")
+                                   yaxis_title = "Slope (%)",
+                                    font_color = "white",
+                                    paper_bgcolor="rgba(0, 0, 0, 0)",
+                                    plot_bgcolor="rgba(0, 0, 0, 0)"
+                                    )
 
 
 corr_speed_slope_scatter = go.Figure()
@@ -88,7 +99,11 @@ corr_speed_slope_scatter.add_trace(go.Scatter(x = speed,
                                              mode = "markers"))
 corr_speed_slope_scatter.update_layout(title = "Corr. speed vs. slope",
                                       xaxis_title = "Speed (m/s)",
-                                      yaxis_title = "Slope (%)")
+                                      yaxis_title = "Slope (%)",
+                                       font_color = "white",
+                                       paper_bgcolor="rgba(0, 0, 0, 0)",
+                                       plot_bgcolor="rgba(0, 0, 0, 0)"
+                                       )
 
 track_fig3 = make_subplots(specs=[[{"secondary_y": True}]])
 track_fig3.add_trace(go.Scatter(x = distance,
@@ -111,7 +126,11 @@ track_fig3.update_layout(hovermode="x unified",
                              y = 1,
                              xanchor = "right",
                              x = 1
-                         ))
+                         ),
+                         font_color = "white",
+                         paper_bgcolor="rgba(0, 0, 0, 0)",
+                         plot_bgcolor="rgba(0, 0, 0, 0)"
+                         )
 
 
 app.title = 'Run run run'
