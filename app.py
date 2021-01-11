@@ -66,7 +66,7 @@ track_fig2 = px.scatter_mapbox(track_df,
                                lat = lat,
                                lon = long,
                                color = speed,
-                               color_continuous_scale = px.colors.cyclical.IceFire,
+                               color_continuous_scale = "Magma",
                                size_max = 13,
                                zoom = 12)
 track_fig2.update_layout(coloraxis_colorbar = dict(title = "Speed (m/s)",
